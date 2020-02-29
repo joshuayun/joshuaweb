@@ -1,6 +1,7 @@
 package com.joshua.admin.web;
 
 import com.joshua.admin.service.posts.PostsService;
+import com.joshua.admin.web.dto.PostsResponseDto;
 import com.joshua.admin.web.dto.PostsSaveRequestDto;
 import com.joshua.admin.web.dto.PostsUpdateRequestDto;
 import lombok.RequiredArgsConstructor;
@@ -24,8 +25,8 @@ public class PostsApiController {
     }
 
     @GetMapping("/api/v1/posts/{id}")
-    public PostsSaveRequestDto findById (@PathVariable Long id) {
-        return  postsService.findById(id);
+    public PostsResponseDto findById (@PathVariable Long id) {
+        return postsService.findById(id);
     }
 
 }
